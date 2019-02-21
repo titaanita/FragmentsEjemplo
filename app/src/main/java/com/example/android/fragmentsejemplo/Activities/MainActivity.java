@@ -1,6 +1,7 @@
 package com.example.android.fragmentsejemplo.Activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -20,9 +21,13 @@ public class MainActivity extends FragmentActivity implements DataFragment.DataL
 
     @Override
     public void sendData(String text) {
-        //cogeremos el texto y se lo pasamos al detail.En el detail haremos un renderizar texto.
-        DetailFragment detailFragment=(DetailFragment)getSupportFragmentManager().findFragmentById(R.id.detailsFragment);
-        detailFragment.renderText(text);
+        
+            //cogeremos el texto y se lo pasamos al detail.En el detail haremos un renderizar texto.
+            DetailFragment detailFragment=(DetailFragment)getSupportFragmentManager().findFragmentById(R.id.detailsFragment);
+            detailFragment.renderText(text);
+
+
 
     }
+
 }

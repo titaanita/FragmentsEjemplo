@@ -15,8 +15,10 @@
             android:id="@+id/buttonSend"
             android:layout_width="146dp"
             android:layout_height="72dp"
-            android:layout_centerInParent="true"
-            android:text="SEND"/>
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="76dp"
+            android:text="SEND" />
 
         <EditText
             android:id="@+id/editTextData"
@@ -25,7 +27,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="118dp"
-            android:text="Estoy en data fragment"/>
+            android:text="Estoy en data fragment" />
 
 
     </RelativeLayout>
