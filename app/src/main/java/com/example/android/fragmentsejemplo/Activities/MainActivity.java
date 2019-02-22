@@ -21,13 +21,26 @@ public class MainActivity extends FragmentActivity implements DataFragment.DataL
 
     @Override
     public void sendData(String text) {
-        
+
+        if(isMultiPanel()) {
             //cogeremos el texto y se lo pasamos al detail.En el detail haremos un renderizar texto.
-            DetailFragment detailFragment=(DetailFragment)getSupportFragmentManager().findFragmentById(R.id.detailsFragment);
+            DetailFragment detailFragment = (DetailFragment) getSupportFragmentManager().findFragmentById(R.id.detailsFragment);
             detailFragment.renderText(text);
 
+        }
+        else{
+            //caso de uso del movil (fragment en nueva activity)
+            Intent i=new Intent(this,DetailActivity.class);
+            i.putExtra("text",text);
+            startActivity(i);
+        }
 
+    }
 
+    public boolean isMultiPanel(){
+        boolean isMultipanel;
+        isMultipanel=(getSupportFragmentManager().findFragmentById(R.id.detailsFragment))!=null;
+        return isMultipanel;
     }
 
 }
